@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Roti Bakar Jogja, rasa terbaik di kota" />
+    <title>Roti Bakar Jogja</title>
+    <link rel="icon" href="./meow-cutie.gif" /> 
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="./tailwindcss.css" rel="stylesheet" />
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #fff8e1;
+      }
+      .toast-bg {
+        background-image: url("https://source.unsplash.com/featured/?toast-background");
+        background-size: cover;
+        background-position: center;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .testimonialSwiper {
+        padding-bottom: 50px;
+      }
+      .testimonialSwiper .swiper-slide {
+        height: auto;
+      }
+      .video-container video {
+        /* position: absolute;   */
+        /* padding-bottom: 56.25%; */
+        /* width: 100%; */
+        height: 100%;
+        object-fit: cover;
+      }
+      /* Tambahkan gaya untuk loading */
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 248, 225, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body class="text-brown-800">
+    <!-- Loading Screen -->
+    <div
+      id="loading-screen"
+      class="fixed inset-0 bg-amber-900 flex items-center justify-center"
+      style="z-index: 9999"
+    >
+      <div
+        class="text-center flex items-center justify-center flex-col gap-5 w-full"
+      >
+        <img
+          src="./meow-cutie.gif"
+          alt="Loading"
+          class="w-[200px] rounded-full"
+        />
+        <h1 id="loading-text" class="text-2xl font-bold text-amber-100"></h1>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-amber-900 fixed w-full z-10 top-0">
+      <div
+        class="container mx-auto p-4 w-full md:flex md:justify-between md:items-center"
+      >
+        <div class="flex justify-between items-center w-full">
+          <div
+            id="logo"
+            class="text-2xl md:text-4xl font-bold text-amber-100 transition-all duration-300"
+          >
+            Roti Bakar Jogja
+          </div>
+          <div class="md:hidden">
+            <button
+              id="menu-toggle"
+              class="text-amber-100 hover:text-amber-300"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:flex md:space-x-4 mt-4 md:mt-0">
+          <a
+            href="#home"
+            class="block md:inline-block text-amber-100 hover:text-amber-300 mb-2 md:mb-0"
+            >Home</a
+          >
+          <a
+            href="#products"
+            class="block md:inline-block text-amber-100 hover:text-amber-300 mb-2 md:mb-0"
+            >Products</a
+          >
+          <a
+            href="#testimonials"
+            class="block md:inline-block text-amber-100 hover:text-amber-300 mb-2 md:mb-0"
+            >Testimonials</a
+          >
+          <a
+            href="#faq"
+            class="block md:inline-block text-amber-100 hover:text-amber-300"
+            >FAQ</a
+          >
+          <a
+            href="#contact"
+            class="block md:inline-block text-amber-100 hover:text-amber-300"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Section 1: Video -->
+    <section id="home" class="relative w-full h-screen">
+      <div
+        class="video-container flex items-center w-full h-full justify-center"
+      >
+        <video autoplay muted loop playsinline class="w-full h-full">
+          <source
+            src="./Justin Bieber - Confident🎧 _ Gradient Mograph Alight Motion 🌀 - Rhmt Editz (720p60, h264, youtube).mp4"
+            type="video/mp4"
+          />
+          Maaf, browser Anda tidak mendukung tag video.
+        </video>
+      </div>
+      <div
+        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+      >
+        <div class="text-center text-white px-4">
+          <h1 class="text-3xl md:text-5xl font-bold mb-4">
+            Selamat Datang di Roti Bakar Jogja
+          </h1>
+          <p class="text-lg md:text-xl mb-8">
+            Nikmati kelezatan roti bakar khas Jogja dengan berbagai varian rasa.
+          </p>
+          <a
+            href="#products"
+            class="bg-amber-600 text-white py-2 px-6 rounded-full hover:bg-amber-700 transition duration-300"
+            >Lihat Menu</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Products -->
+    <section id="products" class="py-16 bg-amber-50 relative">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-12 text-amber-900">
+          Menu Favorit Kami
+        </h2>
+        <div class="px-5 md:px-3 w-full h-full">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            <div
+              class="cards-ps bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://source.unsplash.com/featured/?chocolate-toast"
+                alt="Roti Bakar Coklat"
+                class="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h3 class="text-2xl font-semibold text-amber-800">
+                Roti Bakar Coklat
+              </h3>
+              <p class="text-amber-600 mt-2">Rp 15.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Testimonials -->
+    <section id="testimonials" class="py-16 bg-amber-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-12 text-amber-900">
+          Apa Kata Pelanggan Kami
+        </h2>
+        <div class="swiper testimonialSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center"
+              >
+                <img
+                  src="https://source.unsplash.com/random/100x100?face-1"
+                  alt="Andi"
+                  class="w-24 h-24 rounded-full mb-4 object-cover"
+                />
+                <p class="italic text-amber-800">
+                  "Roti bakarnya enak banget, lumer di mulut! Rasanya bikin
+                  ketagihan."
+                </p>
+                <h4 class="mt-4 font-bold text-amber-900">- Andi, Jogja</h4>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center"
+              >
+                <img
+                  src="https://source.unsplash.com/random/100x100?face-2"
+                  alt="Siti"
+                  class="w-24 h-24 rounded-full mb-4 object-cover"
+                />
+                <p class="italic text-amber-800">
+                  "Tempatnya cozy, roti bakar pisangnya jadi favorit saya. Pasti
+                  bakal balik lagi!"
+                </p>
+                <h4 class="mt-4 font-bold text-amber-900">- Siti, Bantul</h4>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center"
+              >
+                <img
+                  src="https://source.unsplash.com/random/100x100?face-3"
+                  alt="Budi"
+                  class="w-24 h-24 rounded-full mb-4 object-cover"
+                />
+                <p class="italic text-amber-800">
+                  "Harga terjangkau dengan rasa yang luar biasa. Recommended
+                  banget!"
+                </p>
+                <h4 class="mt-4 font-bold text-amber-900">- Budi, Sleman</h4>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center"
+              >
+                <img
+                  src="https://source.unsplash.com/random/100x100?face-3"
+                  alt="Budi"
+                  class="w-24 h-24 rounded-full mb-4 object-cover"
+                />
+                <p class="italic text-amber-800">
+                  "Harga terjangkau dengan rasa yang luar biasa. Recommended
+                  banget!"
+                </p>
+                <h4 class="mt-4 font-bold text-amber-900">- Budi, Sleman</h4>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center"
+              >
+                <img
+                  src="https://source.unsplash.com/random/100x100?face-3"
+                  alt="Budi"
+                  class="w-24 h-24 rounded-full mb-4 object-cover"
+                />
+                <p class="italic text-amber-800">
+                  "Harga terjangkau dengan rasa yang luar biasa. Recommended
+                  banget!"
+                </p>
+                <h4 class="mt-4 font-bold text-amber-900">- Budi, Sleman</h4>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section id="faq" class="py-16 bg-amber-50">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center text-amber-900">
+          Pertanyaan Umum
+        </h2>
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-semibold text-xl text-amber-800">
+              Apakah ada layanan pesan antar?
+            </h3>
+            <p class="text-amber-700 mt-2">
+              Ya, kami menyediakan layanan pesan antar untuk area Jogja dan
+              sekitarnya.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-semibold text-xl text-amber-800">
+              Berapa harga rata-rata menu di sini?
+            </h3>
+            <p class="text-amber-700 mt-2">
+              Harga menu kami berkisar antara Rp 15.000 hingga Rp 20.000.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-semibold text-xl text-amber-800">
+              Bagaimana cara memesan?
+            </h3>
+            <p class="text-amber-700 mt-2">
+              Anda bisa memesan langsung di tempat atau melalui layanan pesan
+              antar kami.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Contact dan Map -->
+    <section id="contact" class="py-16 bg-amber-100">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center text-amber-900">
+          Hubungi Kami
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold text-amber-800 mb-4">
+              Informasi Kontak
+            </h3>
+            <p class="mb-2">
+              <strong>Alamat:</strong> Jl. Malioboro No. 123, Yogyakarta
+            </p>
+            <p class="mb-2"><strong>Telepon:</strong> (0274) 123456</p>
+            <p class="mb-2"><strong>Email:</strong> info@rotibakarjogja.com</p>
+            <p class="mb-4">
+              <strong>Jam Buka:</strong> Setiap hari, 10.00 - 22.00 WIB
+            </p>
+            <form>
+              <input
+                type="text"
+                placeholder="Nama"
+                class="w-full p-2 mb-2 border rounded"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="w-full p-2 mb-2 border rounded"
+              />
+              <textarea
+                placeholder="Pesan"
+                class="w-full p-2 mb-2 border rounded"
+                rows="4"
+              ></textarea>
+              <button
+                type="submit"
+                class="bg-amber-600 text-white py-2 px-4 rounded hover:bg-amber-700 transition duration-300"
+              >
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold text-amber-800 mb-4">
+              Lokasi Kami
+            </h3>
+            <div class="aspect-w-16 aspect-h-9">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1635390778897!2d110.36340931477885!3d-7.782909494388698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a582a2a650001%3A0xdb63c4c1b8d2a8c0!2sMalioboro%2C%20Sosromenduran%2C%20Gedong%20Tengen%2C%20Yogyakarta%20City%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1647918567925!5m2!1sen!2sid"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      class="flex justify-center items-center fixed bottom-5 right-5"
+      style="z-index: 999"
+    >
+      <button
+        id="speaker"
+        class="bg-amber-600 text-white py-2 px-4 rounded hover:bg-amber-700 transition duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-volume-2"
+        >
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-amber-100 py-8 text-center">
+      <p>© 2024 Roti Bakar Jogja. Semua hak cipta dilindungi.</p>
+      <div class="mt-4">
+        <a href="#" class="text-amber-300 hover:text-amber-100 mx-2"
+          >Instagram</a
+        >
+        <a href="#" class="text-amber-300 hover:text-amber-100 mx-2"
+          >Facebook</a
+        >
+        <a href="#" class="text-amber-300 hover:text-amber-100 mx-2">Twitter</a>
+      </div>
+    </footer>
+    <script src="./lib/js/gsap.min.js"></script>
+    <script src="./lib/js/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+    </script>
+    <script src="./lib/js/script.js"></script>
+    <script src="./lib/js/trigger.js"></script>
+  </body>
+</html>
