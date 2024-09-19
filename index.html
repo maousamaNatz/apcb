@@ -586,30 +586,6 @@
           observer.observe(section);
         });
       });
-      gsap.from("#products #smp > .cards-ps", {
-        scrollTrigger: {
-          trigger: "#products",
-          start: "top center", // Ubah menjadi 'top center' untuk memicu animasi ketika bagian atas #products mencapai tengah viewport
-          // toggleActions: "restart pause resume pause",
-        },
-        // opacity: 0,
-        y: -50,
-        stagger: 0.3,
-        duration: 1,
-        ease: "power2.out",
-      });
-      gsap.from("#products #ps2", {
-        scrollTrigger: {
-          trigger: "#products",
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: -50,
-        stagger: 0.3,
-        duration: 1,
-        scrub: true,
-        ease: "power2.out",
-      });
     </script>
   </body>
 </html>
