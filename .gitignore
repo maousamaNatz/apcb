@@ -2,3 +2,5 @@ node_modules
 postcss.config.js
 tailwind.config.js
 meow-cutie.mp4
+package-lock.json
+./style.css
